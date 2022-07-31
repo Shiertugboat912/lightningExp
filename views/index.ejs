@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+<script src="https://brave-otter-f2ntzu-dev-ed.lightning.force.com/lightning/lightning.out.js"></script>
+<script defer>
+  console.log('here', window);
+  $Lightning.use(
+    'c:mapout',
+    function () {
+      $Lightning.createComponent(
+        'c:maptoSite',{},
+        'lightning',
+        "lightning"
+        /* function (cmp) {
+          console.log('LWC component was created');
+          // do some stuff
+        } */
+      );
+    },
+    'https://brave-otter-f2ntzu-dev-ed.lightning.force.com/'
+  );
+</script>
+
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <div id="lightning" style="border: 1px solid red; height: 100px; width:100px"></div>
+  </body>
+</html>
